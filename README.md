@@ -11,12 +11,12 @@ For the most basic logging you need 6 ingredients.
 5. Create a log object
 6. Log something
 
-
 After creating a new .net framework console application.
 
 * In Visual studio, add the Log4Net package using nuget by running install-package log4net. You can also use the package manager interface
 * Add the following code to the App.config
 
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
     <configSections>
@@ -40,18 +40,21 @@ After creating a new .net framework console application.
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
     </startup>
 </configuration>
-
+```
 * Reference the assembly in the program.cs by adding this line right after the using statements. 
-    [assembly: log4net.Config.XmlConfigurator(Watch = true)]
-
+```c#
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+```
 * Insert the following code just inside the Class Program to create a log4net object you can use throughout the class. 
-    private static readonly log4net.ILog log = log4net.LogManager.GetLogger("Program.cs");
-
+```
+private static readonly log4net.ILog log = log4net.LogManager.GetLogger("Program.cs");
+```
 
 
 * Insert the following code in the main method, it will create an entry in the log file. 
-    log.Debug("log a message");
-
+```
+log.Debug("log a message");
+```
 
 
 
