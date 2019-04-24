@@ -15,5 +15,5 @@ Here are some properties in a Key Value pair format
  ConversionPattern			|```%newline```| Puts in a new line char
  rollingStyle				|```Size```		| none
  maxSizeRollBackups			|```10MB```		| Integer plus MB, KB or GB
- maxSizeRollBackups			|```5```		| Integer indicating how many fiels to keep 
+ maxSizeRollBackups			|```5```		| Integer indicating how many files to keep 
  
