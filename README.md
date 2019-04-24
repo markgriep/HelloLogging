@@ -2,19 +2,18 @@
 Simple Hello World for log4net.
 I made it as easier to understand documentation
 
-For the most basic logging you need 6 ingredients.
+For the most basic logging you need 5 ingredients.
 
 1. Add the framework 
-2. Add a reference to the framework
-3. Setup the configuration
-4. Reference the assembly
-5. Create a log object
-6. Log something
+2. Setup the configuration
+3. Reference the assembly
+4. Create a log object
+5. Log something
 
 After creating a new .net framework console application.
 
-* In Visual studio, add the Log4Net package using nuget by running install-package log4net. You can also use the package manager interface
-* Add the following code to the App.config
+1. In Visual studio, add the Log4Net package using nuget by running install-package log4net. You can also use the package manager interface
+2. Add the following code to the App.config
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -41,20 +40,20 @@ After creating a new .net framework console application.
     </startup>
 </configuration>
 ```
-* Reference the assembly in the program.cs by adding this line right after the using statements. 
+3. Reference the assembly in the program.cs by adding this line right after the using statements. 
 ```c#
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 ```
-* Insert the following code just inside the Class Program to create a log4net object you can use throughout the class. 
+4. Insert the following code just inside the Class Program to create a log4net object you can use throughout the class. 
 ```
 private static readonly log4net.ILog log = log4net.LogManager.GetLogger("Program.cs");
 ```
 
 
-* Insert the following code in the main method, it will create an entry in the log file. 
+5. Insert the following code in the main method, it will create an entry in the log file. 
 ```
 log.Debug("log a message");
 ```
-
+When you run the program, you should have a log file called log.txt in the debug folder with your program.
 
 
