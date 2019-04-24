@@ -10,8 +10,8 @@ Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
 
- Key						| Values are   |       Comments
- -------------------------	|-------------|
+ Key						| Values are	|       Comments
+ ------------				|-------------	|-------------
  ConversionPattern			|```%date```	|
 							||```%level```	| This level 
 							||```%thread```	| Thread number
