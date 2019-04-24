@@ -7,14 +7,14 @@ Here are some properties in a Key Value pair format
 
 
 
- Key						| Values are	|       Comments
+ Key						| Values are	|Comments
  ------------				|-------------	|-------------
- ConversionPattern			|```%date```	|
-  							.|```%level```	| This level 
-							.|```%thread```	| Thread number
-							.|```%newline```| Puts in a new line char
- rollingStyle				|```Size```		| 
+ ConversionPattern			|```%date```	| none
+ ConversionPattern			|```%level```	| This level 
+ ConversionPattern			|```%thread```	| Thread number
+ ConversionPattern			|```%newline```| Puts in a new line char
+ rollingStyle				|```Size```		| none
  maxSizeRollBackups			|```10MB```		| ##MB or ##KB or ##GB
-							.|```10KB```		|
+ maxSizeRollBackups			|```10KB```		| none
  maxSizeRollBackups			|```5```		| Any integer 
  
