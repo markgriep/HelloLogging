@@ -14,7 +14,6 @@ Here are some properties in a Key Value pair format
  ConversionPattern			|```%thread```	| Thread number
  ConversionPattern			|```%newline```| Puts in a new line char
  rollingStyle				|```Size```		| none
- maxSizeRollBackups			|```10MB```		| ##MB or ##KB or ##GB
- maxSizeRollBackups			|```10KB```		| none
- maxSizeRollBackups			|```5```		| Any integer 
+ maxSizeRollBackups			|```10MB```		| Integer plus MB, KB or GB
+ maxSizeRollBackups			|```5```		| Integer indicating how many fiels to keep 
  
