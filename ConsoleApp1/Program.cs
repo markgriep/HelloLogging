@@ -13,11 +13,12 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            log.Error("this is an error");
+            log.Error("this is an minor error");
             log.Warn("this is a warn");
-            log.Debug("this is a debug");
+            log.Debug("this is a minor debug");
             log.Info("this is info");
             log.Fatal("this is fatal");
+            log.Fatal("this is fatal you couldn't say it was minor");
             //log.Debug($"log a message {i}", new DivideByZeroException {  });                    //passing an exception as the second parameter
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
