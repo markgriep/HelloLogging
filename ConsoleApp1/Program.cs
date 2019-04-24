@@ -13,7 +13,10 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            log.Debug("log a message");
+            for (int i = 0; i < 1000; i++)          // loop a bunch to test the rolling log
+            {
+                log.Debug($"log a message {i}");
+            }
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }
