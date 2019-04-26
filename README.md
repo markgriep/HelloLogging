@@ -1,5 +1,30 @@
-# HelloLog4Net
-Simple Hello World for log4net.
+# HelloLogging
+
+Some Simple Logging examples.
+
+## Serialog is a modern simple logging framework.
+
+1. Install the nuget packages.
+2. Add the following code to the main method.
+```C#
+var log = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)
+            .MinimumLevel.Verbose()
+            .CreateLogger();
+
+            var userId = "mgasrs";
+
+            log.Fatal("this is fatal");             // Highest
+            log.Error("this is error");
+            log.Warning("this is warning");
+            log.Information("this is info");
+            log.Debug($"debug from : {userId}");
+            log.Verbose("this is verbose");         // Lowest
+```
+
+
+## Log4Net
 I made it as easier to understand documentation
 
 For the most basic logging you need 5 ingredients.
