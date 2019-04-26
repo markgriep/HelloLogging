@@ -12,7 +12,8 @@ namespace SerilogConsoleApp
         static void Main(string[] args)
         {
             var log = new LoggerConfiguration()
-               .WriteTo.Console()
+               //.WriteTo.Console()
+               .WriteTo.ColoredConsole()
 
                .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)  // 
 
@@ -21,6 +22,7 @@ namespace SerilogConsoleApp
                .WriteTo.File("log/Yog.txt", fileSizeLimitBytes: 1024, retainedFileCountLimit: 5, rollOnFileSizeLimit: true)
 
                .WriteTo.SQLite("db/test.db", tableName: "dataLog" )
+
 
 
 
@@ -33,6 +35,18 @@ namespace SerilogConsoleApp
                 log.Information($"Hello, Serilog! {i}");
             }
 
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            log.Error("this is error");
+            log.Information("this is info");
+            log.Warning("this is warning");
+            log.Fatal("this is fatal");
+
+            log.Debug("this is debug");
+            log.Verbose("this is verbose");
+            
 
 
             Console.ReadKey();
