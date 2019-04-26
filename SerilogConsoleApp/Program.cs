@@ -13,14 +13,20 @@ namespace SerilogConsoleApp
         {
             var log = new LoggerConfiguration()
                .WriteTo.Console()
-  
+
                .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)  // 
 
                .WriteTo.File("log/Xog.txt", retainedFileCountLimit: 4, rollingInterval: RollingInterval.Minute)
-               
+
                .WriteTo.File("log/Yog.txt", fileSizeLimitBytes: 1024, retainedFileCountLimit: 5, rollOnFileSizeLimit: true)
-  
+
+               .WriteTo.SQLite("db/test.db", tableName: "dataLog" )
+
+
+
                .CreateLogger();
+
+
 
             for (int i = 0; i < 100; i++)
             {
