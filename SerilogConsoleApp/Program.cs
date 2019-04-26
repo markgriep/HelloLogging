@@ -13,9 +13,20 @@ namespace SerilogConsoleApp
         {
             var log = new LoggerConfiguration()
                .WriteTo.Console()
+  
+               .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)  // 
+
+               .WriteTo.File("log/Xog.txt", retainedFileCountLimit: 4, rollingInterval: RollingInterval.Minute)
+               
+               .WriteTo.File("log/Yog.txt", fileSizeLimitBytes: 1024, retainedFileCountLimit: 5, rollOnFileSizeLimit: true)
+  
                .CreateLogger();
 
-            log.Information("Hello, Serilog!");
+            for (int i = 0; i < 100; i++)
+            {
+                log.Information($"Hello, Serilog! {i}");
+            }
+
 
 
             Console.ReadKey();
