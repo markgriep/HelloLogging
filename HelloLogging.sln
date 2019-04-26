@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Root.md = Root.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogConsoleApp", "SerilogConsoleApp\SerilogConsoleApp.csproj", "{9872FB6B-D654-41DB-A878-9D43FEDFC91F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{2BC59855-A8D0-46B7-B9EC-AE192CD38D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BC59855-A8D0-46B7-B9EC-AE192CD38D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BC59855-A8D0-46B7-B9EC-AE192CD38D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9872FB6B-D654-41DB-A878-9D43FEDFC91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9872FB6B-D654-41DB-A878-9D43FEDFC91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9872FB6B-D654-41DB-A878-9D43FEDFC91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9872FB6B-D654-41DB-A878-9D43FEDFC91F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
