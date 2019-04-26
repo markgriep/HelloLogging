@@ -13,7 +13,7 @@ namespace SerilogConsoleApp
         {
             var log = new LoggerConfiguration()
                //.WriteTo.Console()
-               .WriteTo.ColoredConsole()
+               .WriteTo.ColoredConsole(outputTemplate: " {Timestamp:HH:mm} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
 
                .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)  // 
 
@@ -43,6 +43,7 @@ namespace SerilogConsoleApp
             log.Information("this is info");
             log.Warning("this is warning");
             log.Fatal("this is fatal");
+         
 
             log.Debug("this is debug");
             log.Verbose("this is verbose");
