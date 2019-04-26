@@ -26,8 +26,8 @@ namespace SerilogConsoleApp
 
                .CreateLogger();
 
-
-            
+            var userId = "mgasrs";
+            log.Debug($"User id is: {userId}");
             log.Fatal("this is fatal");             // Highest
             log.Error("this is error");
             log.Warning("this is warning");
