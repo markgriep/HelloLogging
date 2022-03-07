@@ -9,6 +9,11 @@ namespace SerilogConsoleApp
 {
     class Program
     {
+
+        /// <summary>
+        /// Start here
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             var log = new LoggerConfiguration()
