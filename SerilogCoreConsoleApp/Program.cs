@@ -6,8 +6,8 @@ namespace SerilogCoreConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-
+            
+             
 
             var log = new LoggerConfiguration()
 
