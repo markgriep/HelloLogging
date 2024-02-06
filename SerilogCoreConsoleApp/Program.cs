@@ -41,6 +41,8 @@ namespace SerilogCoreConsoleApp
 
             for (int i = 0; i < 199; i++)
             {
+
+
             WriteLogStuff(log, i);
 
             }
@@ -56,6 +58,7 @@ namespace SerilogCoreConsoleApp
 
     public static void WriteLogStuff(ILogger log, int x)
         {
+            Thread.Sleep(new Random().Next(100, 7000));
 
             string? proc = Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
             string? userId = Environment.GetEnvironmentVariable("USERNAME");
