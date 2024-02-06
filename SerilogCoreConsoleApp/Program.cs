@@ -6,16 +6,16 @@ namespace SerilogCoreConsoleApp
     {
         static void Main(string[] args)
         {
-            
-             
+
+
 
             var log = new LoggerConfiguration()
 
               .WriteTo.Console(outputTemplate: " {Timestamp:HH:mm:ss} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
-         
+
               .MinimumLevel.Verbose()
 
-              .WriteTo.File("log/RollingDaylog.txt", rollingInterval: RollingInterval.Day)  // 
+              .WriteTo.File("log/RollingDaylog.txt", rollingInterval: RollingInterval.Day)  //
 
               .WriteTo.File("log/RollingMinuteLog.txt", retainedFileCountLimit: 4, rollingInterval: RollingInterval.Minute)
 
@@ -32,12 +32,12 @@ namespace SerilogCoreConsoleApp
 
             }
 
-            
+
 
             Console.ReadKey();
 
         }
-    
+
 
 
 
@@ -47,7 +47,7 @@ namespace SerilogCoreConsoleApp
             string? proc = Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
             string? userId = Environment.GetEnvironmentVariable("USERNAME");
             string? ComputerName = Environment.GetEnvironmentVariable("COMPUTERNAME");
-            
+
             log.Debug($"===== Loop #: {x}");
             log.Debug($"     User ID: {userId}");
             log.Debug($"         CPU: {proc}");
