@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Core;
+using Serilog.Sinks.SystemConsole.Themes;
 
 
 namespace SerilogCoreConsoleApp
@@ -11,7 +12,7 @@ namespace SerilogCoreConsoleApp
         {
 
             //var log = new LoggerConfiguration()
-            //  .WriteTo.Console(outputTemplate: " {Timestamp:HH:mm:ss} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
+            //  .WriteTo.Console(theme: AnsiConsoleTheme.Code, outputTemplate: " {Timestamp:HH:mm:ss} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
             //  .MinimumLevel.Verbose()
             //  .WriteTo.File("log/RollingDaylog.txt", rollingInterval: RollingInterval.Day)  //
             //  .WriteTo.File("log/RollingMinuteLog.txt", retainedFileCountLimit: 4, rollingInterval: RollingInterval.Minute)
@@ -20,7 +21,6 @@ namespace SerilogCoreConsoleApp
             //  .CreateLogger();
 
 
-            Console.WriteLine(  Directory.GetCurrentDirectory());
 
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -28,6 +28,7 @@ namespace SerilogCoreConsoleApp
 
             var log = new LoggerConfiguration()
                 .ReadFrom.Configuration(config)
+                .WriteTo.Console(theme: AnsiConsoleTheme.Sixteen)       // This is for using themes.  Can't put in Configuration file
                 .CreateLogger();
 
             for (int i = 0; i < 199; i++)
@@ -59,7 +60,6 @@ namespace SerilogCoreConsoleApp
             log.Information("this is info");
             log.Debug("this is debug");
             log.Verbose("this is verbose");         // Lowest
-
 
         }
 
