@@ -1,4 +1,7 @@
-﻿using Serilog;
+﻿using Microsoft.Extensions.Configuration;
+using Serilog;
+using Serilog.Core;
+
 
 namespace SerilogCoreConsoleApp
 {
@@ -9,24 +12,34 @@ namespace SerilogCoreConsoleApp
 
 
 
+            //var log = new LoggerConfiguration()
+            //  .WriteTo.Console(outputTemplate: " {Timestamp:HH:mm:ss} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
+            //  .MinimumLevel.Verbose()
+            //  .WriteTo.File("log/RollingDaylog.txt", rollingInterval: RollingInterval.Day)  //
+            //  .WriteTo.File("log/RollingMinuteLog.txt", retainedFileCountLimit: 4, rollingInterval: RollingInterval.Minute)
+            //  .WriteTo.File("log/Size-NumberLimitLog.txt", fileSizeLimitBytes: 1024, retainedFileCountLimit: 10, rollOnFileSizeLimit: true)
+            //  //.WriteTo.SQLite("db/test.db", tableName: "dataLog")
+            //  .CreateLogger();
+
+
+            Console.WriteLine(  Directory.GetCurrentDirectory());
+
+
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build();
+
+
+
             var log = new LoggerConfiguration()
-
-              .WriteTo.Console(outputTemplate: " {Timestamp:HH:mm:ss} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
-
-              .MinimumLevel.Verbose()
-
-              .WriteTo.File("log/RollingDaylog.txt", rollingInterval: RollingInterval.Day)  //
-
-              .WriteTo.File("log/RollingMinuteLog.txt", retainedFileCountLimit: 4, rollingInterval: RollingInterval.Minute)
-
-              .WriteTo.File("log/Size-NumberLimitLog.txt", fileSizeLimitBytes: 1024, retainedFileCountLimit: 10, rollOnFileSizeLimit: true)
-
-              //.WriteTo.SQLite("db/test.db", tableName: "dataLog")
-
-              .CreateLogger();
+                .ReadFrom.Configuration(config)
+                .CreateLogger();
 
 
-            for (int i = 0; i < 1990; i++)
+
+
+
+            for (int i = 0; i < 199; i++)
             {
             WriteLogStuff(log, i);
 
