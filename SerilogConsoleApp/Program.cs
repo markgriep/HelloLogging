@@ -11,7 +11,7 @@ namespace SerilogConsoleApp
     {
 
         /// <summary>
-        /// Start here
+        /// This is the entry point
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
