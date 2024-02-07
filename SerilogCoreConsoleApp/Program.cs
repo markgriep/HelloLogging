@@ -29,6 +29,7 @@ namespace SerilogCoreConsoleApp
             var log = new LoggerConfiguration()
                 .ReadFrom.Configuration(config)
                 .WriteTo.Console(theme: AnsiConsoleTheme.Sixteen)       // This is for using themes.  Can't put in Configuration file
+                .WriteTo.Notepad()
                 .CreateLogger();
 
             for (int i = 0; i < 199; i++)
@@ -44,7 +45,7 @@ namespace SerilogCoreConsoleApp
 
     public static void WriteLogStuff(ILogger log, int x)
         {
-            Thread.Sleep(GetBellRandom(100, 700, 500));
+            Thread.Sleep(GetBellRandom(100, 2700, 900));
 
             string? proc = Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
             string? userId = Environment.GetEnvironmentVariable("USERNAME");
