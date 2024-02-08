@@ -8,18 +8,6 @@ namespace SerilogCoreConsoleWithDI
 {
 
 
-    public interface IMessagingService
-    {
-        void SendMessage(string message, string address);
-    }
-
-
-
-    public interface ITransientMessagingService
-    {
-        void SendMessage(string message, string address);
-    }
-
 
     internal class MessagingService :IMessagingService, ITransientMessagingService
     {
@@ -28,6 +16,7 @@ namespace SerilogCoreConsoleWithDI
 
         public MessagingService()
         {
+            System.Threading.Thread.Sleep(new Random().Next(1, 357));
             pseudoId = DateTime.Now.Millisecond;
 
             Console.WriteLine($"MessagingService instance created. the pseudo-id is {pseudoId}");

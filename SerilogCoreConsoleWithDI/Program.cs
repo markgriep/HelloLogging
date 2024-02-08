@@ -12,26 +12,18 @@ namespace SerilogCoreConsoleWithDI
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
-            //var genericService = serviceProvider.GetService<IService>();
+           
             var messagingService = serviceProvider.GetService<IMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1,357));
             var messagingService1 = serviceProvider.GetService<IMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
             var messagingService2 = serviceProvider.GetService<IMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
             var messagingService3 = serviceProvider.GetService<IMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
 
 
 
             var messagingServiceTransient = serviceProvider.GetService<ITransientMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
             var messagingServiceTransient1 = serviceProvider.GetService<ITransientMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
             var messagingServiceTransient2 = serviceProvider.GetService<ITransientMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
             var messagingServiceTransient3 = serviceProvider.GetService<ITransientMessagingService>();
-            System.Threading.Thread.Sleep(new Random().Next(1, 357));
 
 
 
@@ -53,8 +45,8 @@ namespace SerilogCoreConsoleWithDI
 
 
 
-            var x = serviceCollection.Count();
-            Console.WriteLine(  x);
+            var serviceCount = serviceCollection.Count();
+            Console.WriteLine($"Number of Services registered:{serviceCount}");
 
         }
 
