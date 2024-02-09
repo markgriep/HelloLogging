@@ -1,5 +1,6 @@
 # HelloLogging
 
+
 Some Simple Logging examples.
 
 ## Serialog is a modern simple logging framework.

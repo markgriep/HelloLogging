@@ -1,5 +1,6 @@
 # Filters
 
+
 You can control what gets sent to the logs by creating a filter in the appender
 
 

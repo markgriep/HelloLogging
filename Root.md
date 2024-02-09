@@ -1,5 +1,6 @@
 # Root section of config
 
+
 The root section is where you setup where/how the appenders will be invoked.
 
 ```XML
