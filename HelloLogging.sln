@@ -17,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogConsoleApp", "Serilo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogCoreConsoleApp", "SerilogCoreConsoleApp\SerilogCoreConsoleApp.csproj", "{CF6DFFB9-8C4B-452F-A839-14749CD6941A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogCoreConsoleWithDI", "SerilogCoreConsoleWithDI\SerilogCoreConsoleWithDI.csproj", "{51752B28-D3FF-4A82-ADA6-CE0E787EB694}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogCoreConsoleWithDI", "SerilogCoreConsoleWithDI\SerilogCoreConsoleWithDI.csproj", "{51752B28-D3FF-4A82-ADA6-CE0E787EB694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogBlazorServer", "SerilogBlazorServer\SerilogBlazorServer.csproj", "{C89D10BD-00A7-4EA5-A435-E04DE9F0E320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{51752B28-D3FF-4A82-ADA6-CE0E787EB694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51752B28-D3FF-4A82-ADA6-CE0E787EB694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51752B28-D3FF-4A82-ADA6-CE0E787EB694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C89D10BD-00A7-4EA5-A435-E04DE9F0E320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89D10BD-00A7-4EA5-A435-E04DE9F0E320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C89D10BD-00A7-4EA5-A435-E04DE9F0E320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C89D10BD-00A7-4EA5-A435-E04DE9F0E320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

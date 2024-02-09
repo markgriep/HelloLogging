@@ -8,11 +8,17 @@ namespace SerilogCoreConsoleWithDI
 
         static void Main(string[] args)
         {
+            ExperimentWithServices();
+
+        }
+
+        private static void ExperimentWithServices()
+        {
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
-           
+
             var messagingService = serviceProvider.GetService<IMessagingService>();
             var messagingService1 = serviceProvider.GetService<IMessagingService>();
             var messagingService2 = serviceProvider.GetService<IMessagingService>();
@@ -27,16 +33,12 @@ namespace SerilogCoreConsoleWithDI
 
 
 
-
-
-
-
             messagingService.SendMessage("Hello MOM SINGLETON", "612-724-7574");
             messagingService1.SendMessage("Hello BANK SINGLETON", "952-831-6600");
             messagingService2.SendMessage("Hello SLP SINGLETON", "952-926-4052");
             messagingService3.SendMessage("Hello OLDHOUSE SINGLETON", "612-724-8910");
 
-            Console.WriteLine("");
+
 
             messagingServiceTransient.SendMessage("Hello MOM TRANSIENT", "612-724-7574");
             messagingServiceTransient1.SendMessage("Hello BANK TRANSIENT", "952-831-6600");
@@ -47,9 +49,7 @@ namespace SerilogCoreConsoleWithDI
 
             var serviceCount = serviceCollection.Count();
             Console.WriteLine($"Number of Services registered:{serviceCount}");
-
         }
-
 
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
