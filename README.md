@@ -2,8 +2,10 @@
 
 
 Some Simple Logging examples.
+Primary focus is on Serilog.
 
-## Serialog is a modern simple logging framework.
+
+## Serilog
 
 1. Install the nuget packages.
 2. Add the following code to the main method.

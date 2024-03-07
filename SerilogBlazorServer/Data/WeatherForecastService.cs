@@ -1,3 +1,5 @@
+using SerilogTimings;
+
 namespace SerilogBlazorServer.Data
 {
     public class WeatherForecastService
@@ -9,12 +11,24 @@ namespace SerilogBlazorServer.Data
 
         public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
         {
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+
+
+            using (Operation.Time("starting..."))
             {
-                Date = startDate.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            }).ToArray());
-        }
-    }
+				using (var op = Operation.Begin("Some task"))
+				{
+					System.Threading.Thread.Sleep(3000);
+
+					var xxx = Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+					{
+						Date = startDate.AddDays(index),
+						TemperatureC = Random.Shared.Next(-20, 55),
+						Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+					}).ToArray());
+					op.Complete("completed", "asdf");
+					return xxx;
+				}
+			}
+		}
+	}
 }
